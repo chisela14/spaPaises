@@ -14,9 +14,24 @@ export class PaisService {
   constructor(private http:HttpClient) { }
 
   searchCountries(query:string){
-
     this.http.get<Country[]>(`${this.url}${query}`)
     .subscribe((resp)=> this.results=resp)
+  }
+
+  query:string = "";
+  country: Country;
+
+  searchCountry(query:string){
+    this.query = query;
+    this.http.get<Country>(`${this.url}${query}`)
+    .subscribe({
+      next: (resp) =>{
+          this.country = resp;
+      },
+      error: (err) =>{
+
+      }
+  })
   }
   
 
