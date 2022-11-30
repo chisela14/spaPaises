@@ -1,10 +1,13 @@
-<app-search></app-search>
+<h3 class="text-black">Por País</h3>
 
-<div class="alert alert-danger">
-    No se encontró nada con el término ___
+<hr class="text-black"/>
+<app-search [results] = "countries"></app-search>
+
+<div class="alert alert-danger" *ngIf="error.length">
+    No se encontró nada con el término {{error}}
 </div>
 
-<table class="table table-hover">
+<table class="table table-hover" *ngIf="countries.length > 0">
     <thead>
         <tr>
             <th> # </th>
@@ -15,15 +18,16 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let country of results; let i = index;"> <!-- Esto es lo que tenemos que repetir por cada país que encuentre -->
+        <tr *ngFor="let country of countries; let i = index;"> <!-- Esto es lo que tenemos que repetir por cada país que encuentre -->
             <td> {{i + 1}} </td> <!-- Aquí obtendremos el número de resultado -->
             <td>
                 <img class="small-flag" [src]="country.flags.png" > <!-- Aquí obtendremos la url de la bandera --> 
             </td>
             <td> {{country.capital}}, {{country.name.common}} </td> <!-- La capital, el nombre del país y la población lo obtendremos de la api -->
-            <td> {{country.population.toLocaleString()}} </td>
+            <!-- <td> {{country.population.toLocaleString()}} </td> -->
+            <td> {{country.population|number}} </td> <!-- pipe -->
             <td>
-                <a [routerLink]="['/pais/:id']">Ver...</a> <!-- Esto lo dejamos así de momento -->
+                <a [routerLink]="['/pais/', {{country.name.common}}]">Ver...</a> <!-- Esto lo dejamos así de momento -->
             </td>
         </tr>
     </tbody>
