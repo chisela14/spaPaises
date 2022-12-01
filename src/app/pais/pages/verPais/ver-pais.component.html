@@ -9,7 +9,7 @@
 
     <div class="row">
         <div class="col-12">
-            <h1>País: <small>{{ country.name }}</small></h1>
+            <h1>País: <small>{{ country.name.common }}</small></h1>
         </div>
     </div>
 
@@ -24,13 +24,13 @@
             <h3>Información</h3>
             <ul class="list-group">
                 <li class="list-group-item">
-                    <strong>Población</strong> 
+                    <strong>Población</strong> {{ country.population|number }}
                 </li>
                 <li class="list-group-item">
-                    <strong>Código numérico</strong> 
+                    <strong>Código numérico</strong> {{country.ccn3}}
                 </li>
                 <li class="list-group-item">
-                    <strong>Código alpha3</strong> 
+                    <strong>Código alpha3</strong> {{country.cca3}}
                 </li>
             </ul>
         </div>
@@ -42,16 +42,16 @@
     <div class="row">
         <div class="col">
 
-            <span class="badge bg-primary mr-1">{{ country.translations.de }}</span>
-            <span class="badge bg-primary mr-1">{{ country.translations.es }}</span>
-            <span class="badge bg-primary mr-1">{{ country.translations.fr }}</span>
-            <span class="badge bg-primary mr-1">{{ country.translations.ja }}</span>
-            <span class="badge bg-primary mr-1">{{ country.translations.it }}</span>
-            <span class="badge bg-primary mr-1">{{ country.translations.br }}</span>
-            <span class="badge bg-primary mr-1">{{ country.translations.pt }}</span>
-            <span class="badge bg-primary mr-1">{{ country.translations.nl }}</span>
-            <span class="badge bg-primary mr-1">{{ country.translations.hr }}</span>
-            <span class="badge bg-primary mr-1">{{ country.translations.fa }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations['deu'].common }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations['es'].common }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations['fr'].common }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations['ja'].common }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations['it'].common }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations['br'].common }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations['pt'].common }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations['nl'].common }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations['hr'].common }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations['fa'].common }}</span>
 
         </div>
     </div>

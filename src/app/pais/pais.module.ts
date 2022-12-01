@@ -8,6 +8,7 @@ import { PaisService } from './services/pais.service';
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { TableComponent } from './components/table/table.component';
 
 
 
@@ -17,7 +18,8 @@ import { RouterModule } from '@angular/router';
     PorPaisComponent,
     PorRegionComponent,
     VerPaisComponent,
-    SearchComponent
+    SearchComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,

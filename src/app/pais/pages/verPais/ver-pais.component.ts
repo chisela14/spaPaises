@@ -14,17 +14,15 @@ export class VerPaisComponent implements OnInit {
   }
 
   code:string = "";
+  country!:Country;
+
   ngOnInit(): void {
     this.code = this.route.snapshot.params['id']; //tiene el nombre id porque así se ha puesto en el fichero de rutas
-  }
-  
-  get country():Country {
     this.paisService.searchCountry(this.code)
     .subscribe({
-      next: (resp)=> {return resp},
+      next: (resp)=> {this.country=resp[0]},
       error: (error) => console.log(error)
     })
-  };
-
+  }
 
 }

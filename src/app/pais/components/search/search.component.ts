@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output , EventEmitter} from '@angular/core';
 import { PaisService } from '../../services/pais.service';
-import { Country } from '../../interfaces/searchResponse.interface';
 
 @Component({
   selector: 'app-search',
@@ -8,16 +7,16 @@ import { Country } from '../../interfaces/searchResponse.interface';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private paisService: PaisService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
-
+  
   query:string = "";
-  results:Country[] = [];
+  @Output()onSearch:EventEmitter<string> = new EventEmitter();
   
   search(){
-    this.results = this.paisService.searchCountries(this.query);
+    this.onSearch.emit(this.query);
   }
 
 }
