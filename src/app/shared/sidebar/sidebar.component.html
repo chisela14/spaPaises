@@ -3,10 +3,10 @@
     <h3 class="text-black"> Búsquedas </h3>
     <hr class="text-black"/>
 
-    <div class="list-group list-reset">
-        <a class="list-group-item list-group-item-action" [routerLink]="['']" [routerLinkActive]="['active-link']">Buscar páis</a>
-        <a class="list-group-item list-group-item-action" [routerLink]="['/region']" [routerLinkActive]="['active-link']">Por región</a>
-        <a class="list-group-item list-group-item-action" [routerLink]="['/capital']" [routerLinkActive]="['active-link']">Por capital</a>
+    <div class="list-group list-reset"><!--pepita en sidebar.ts, pepito en styles.css - pepito solo lo pilla si refrescas-->
+        <a class="list-group-item list-group-item-action" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Buscar páis</a>
+        <a class="list-group-item list-group-item-action" [routerLink]="['/region']" routerLinkActive="pepita">Por región</a>
+        <a class="list-group-item list-group-item-action" routerLink="/capital" routerLinkActive="pepita">Por capital</a>
     </div>
 </div>
   <!-- End Sidebar -->

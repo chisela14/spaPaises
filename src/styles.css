@@ -6,6 +6,9 @@
     margin-right: 5px;
 }
 
-.active-link{
-    color: red;
+/*active: clase por defecto de boostrap*/
+.pepito{
+    background-color: lightgreen;
+    color: white;
 }
+

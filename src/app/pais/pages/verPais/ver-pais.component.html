@@ -1,5 +1,5 @@
 <!-- Este div se mostrará si no se ha cargado todavía el país -->
-<div class="alert alert-info">
+<div class="alert alert-info" *ngIf="!country">
     Espere por favor...
 </div>
 
@@ -43,15 +43,15 @@
         <div class="col">
 
             <span class="badge bg-primary mr-1">{{ country.translations['deu'].common }}</span>
-            <span class="badge bg-primary mr-1">{{ country.translations['es'].common }}</span>
-            <span class="badge bg-primary mr-1">{{ country.translations['fr'].common }}</span>
-            <span class="badge bg-primary mr-1">{{ country.translations['ja'].common }}</span>
-            <span class="badge bg-primary mr-1">{{ country.translations['it'].common }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations['espa'].common }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations['fra'].common }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations['jpn'].common }}</span>
+            <!-- <span class="badge bg-primary mr-1">{{ country.translations['it'].common }}</span> No tienen bien el término
             <span class="badge bg-primary mr-1">{{ country.translations['br'].common }}</span>
             <span class="badge bg-primary mr-1">{{ country.translations['pt'].common }}</span>
             <span class="badge bg-primary mr-1">{{ country.translations['nl'].common }}</span>
             <span class="badge bg-primary mr-1">{{ country.translations['hr'].common }}</span>
-            <span class="badge bg-primary mr-1">{{ country.translations['fa'].common }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations['fa'].common }}</span> -->
 
         </div>
     </div>

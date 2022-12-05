@@ -3,8 +3,8 @@
 <hr class="text-black"/>
 <app-search (onSearch) = "searchCountries($event)"></app-search>
 
-<div class="alert alert-danger" *ngIf="textError.length">
-    No se encontró nada con el término {{error}}
+<div class="alert alert-danger" *ngIf="error">
+    No se encontró nada con el término {{textError}}
 </div>
 
 <app-table [countries] = "results"></app-table>
